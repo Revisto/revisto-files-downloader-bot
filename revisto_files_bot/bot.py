@@ -2,8 +2,8 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import setting
 
 def video_downloader(update, context):
-    file_name = update.message.audio.file_name
-    file = context.bot.getFile(update.message.audio.file_id)
+    file_name = update.message.video.file_name
+    file = context.bot.getFile(update.message.video.file_id)
     file.download(setting.save_location + file_name)
     update.message.reply_text("Done, bro")
 
